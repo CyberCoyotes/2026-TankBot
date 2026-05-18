@@ -22,15 +22,22 @@ public final class Constants {
   }
 
   public static class Drivetrain {
-    public static final int FRONT_LEFT_MOTOR_ID = 1; // CounterClockwise_Postive
-    public static final int FRONT_RIGHT_MOTOR_ID = 2; // Clockwise_Positive
+    // CAN IDs — LEFT side: CounterClockwise_Positive; RIGHT side: Clockwise_Positive
+    public static final int FRONT_LEFT_MOTOR_ID  = 1;
+    public static final int FRONT_RIGHT_MOTOR_ID = 2;
+    public static final int CENTER_LEFT_MOTOR_ID  = 3; // leader
+    public static final int CENTER_RIGHT_MOTOR_ID = 4; // leader
+    public static final int BACK_LEFT_MOTOR_ID   = 5;
+    public static final int BACK_RIGHT_MOTOR_ID  = 6;
 
-    public static final int CENTER_LEFT_MOTOR_ID = 3; // CounterClockwise_Postive
-    public static final int CENTER_RIGHT_MOTOR_ID = 4; // Clockwise_Positive
-    
-    public static final int BACK_LEFT_MOTOR_ID = 5; // CounterClockwise_Postive
-    public static final int BACK_RIGHT_MOTOR_ID = 6; // Clockwise_Positive
+    // Parade-safe output cap (0.0–1.0)
+    public static final double MAX_OUTPUT = 0.4;
 
+    // Throttle slew rate (units/second); limits how fast output ramps up
+    public static final double SLEW_RATE = 2.0;
+
+    // Joystick deadband — inputs smaller than this are treated as zero
+    public static final double DEADBAND = 0.1;
   }
 
 
